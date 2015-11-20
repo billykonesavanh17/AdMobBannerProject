@@ -290,6 +290,9 @@
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
+    <!-- From: file:/Users/bkon4208/Documents/workspace/AdMobBannerProject/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="title_activity_video">Video Activity</string>
     <!-- From: file:/Users/bkon4208/Documents/workspace/AdMobBannerProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

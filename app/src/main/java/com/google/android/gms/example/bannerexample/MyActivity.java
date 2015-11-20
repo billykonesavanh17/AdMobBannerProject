@@ -16,7 +16,6 @@
 package com.google.android.gms.example.bannerexample;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,11 +33,12 @@ import com.google.android.gms.ads.AdView;
  */
 public class MyActivity extends Activity implements Runnable
 {
-
+// Declaring variables
     private AdView myAdView;
     private Button startButton;
     private Button pauseButton;
     private Button stopButton;
+    private Button videoButton;
     private MediaPlayer soundPlayer;
     private SeekBar soundSeekBar;
     private Thread soundThread;
@@ -54,6 +54,7 @@ public class MyActivity extends Activity implements Runnable
         startButton = (Button) findViewById(R.id.playButton);
         pauseButton = (Button) findViewById(R.id.pauseButton);
         stopButton = (Button) findViewById(R.id.stopButton);
+        videoButton = (Button) findViewById(R.id.videoButton);
         soundSeekBar = (SeekBar) findViewById(R.id.soundSeekBar);
         soundPlayer = MediaPlayer.create(this.getBaseContext(), R.raw.sax);
 
@@ -73,8 +74,10 @@ public class MyActivity extends Activity implements Runnable
         soundThread.start();
     }
 
+    //Setting up all listeners for activity.
     private void setupListeners()
     {
+        //Starts the audio.
         startButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -85,6 +88,7 @@ public class MyActivity extends Activity implements Runnable
             }
         });
 
+        //Pauses the audio.
         pauseButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -96,6 +100,7 @@ public class MyActivity extends Activity implements Runnable
 
         });
 
+        //Stops and restarts the audio.
         stopButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -106,6 +111,19 @@ public class MyActivity extends Activity implements Runnable
 
             }
         });
+
+        //Goes to video activity.
+        videoButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View currentView)
+            {
+                Intent myIntent = new Intent(currentView.getContext(), VideoActivity.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
+
 
         soundSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
@@ -132,6 +150,7 @@ public class MyActivity extends Activity implements Runnable
 
     }
 
+    //Syncs the seek bar with the audio.
     public void run()
     {
         int currentPosition = 0;

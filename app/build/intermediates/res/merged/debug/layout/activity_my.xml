@@ -63,5 +63,16 @@
         android:layout_marginEnd="26dp"
         android:background="#ff584e"/>
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch Video"
+        android:id="@+id/videoButton"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/playButton"
+        android:layout_centerHorizontal="true"
+        android:background="#a4ff6b"/>
+
 </RelativeLayout>
 <!-- From: file:/Users/bkon4208/Documents/workspace/AdMobBannerProject/app/src/main/res/layout/activity_my.xml -->
